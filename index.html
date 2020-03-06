@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress-Bar</title>
+    <style>
+        #container {
+        width: 400px;
+        height: 50px;
+        position: relative;
+        background: yellow;
+        left: 40%;
+        top:40%;
+        }
+        #animate {
+        width: 0px;
+        height: 50px;
+        position: absolute;
+        background: blue;
+        }
+    </style>
+</head>
+<body>
+    <button  onclick= myfunction()>Click Me</button>
+    <div id ="container">
+    <div id ='animate'></div>
+    </div>
+</body>
+</html>
+
+<script> 
+function myfunction(){
+    var elem = document.getElementById('animate');
+    var pos = 0;
+    var id = setInterval( frame , 10);
+    function frame(){
+        if(pos===404){
+            clearInterval(id)
+        }else{
+            elem.style.width = pos +'px';
+            pos+=4
+        }
+    }
+
+}
+</script>
+
